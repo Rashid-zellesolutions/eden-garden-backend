@@ -39,6 +39,16 @@ const DiningOption = require('./config/Routes/OtherRoutes/DiningOptionRoutes');
 const CutleryRoutes = require('./config/Routes/OtherRoutes/CutleryRoutes');
 const SoundRoutes = require('./config/Routes/OtherRoutes/SoundRoutes');
 
+// Food Type Routes
+const FoodTypeRoutes = require('./config/Routes/FoodTypeRoutes/FoodTypeRoutes')
+
+// Food Type Objects Routes
+const TeaCoffee = require('./config/Routes/FoodTypeRoutes/TeaCoffeRoutes');
+const Appetiser = require('./config/Routes/FoodTypeRoutes/AppetizersRoutes');
+const Dessert = require('./config/Routes/FoodTypeRoutes/DessertRoutes');
+const MainEntries = require('./config/Routes/FoodTypeRoutes/MainEntries');
+const JuicesDrinks = require('./config/Routes/FoodTypeRoutes/JuicesDrinksRoutes');
+
 // config env
 dotenv.config();
 
@@ -133,6 +143,16 @@ app.use('/api/v1/Lightning', Lightning);
 app.use('/api/v1/DiningOption', DiningOption);
 app.use('/api/v1/Cutlery', CutleryRoutes);
 app.use('/api/v1/Sound', SoundRoutes);
+
+// FoodType Routes
+app.use('/api/v1/FoodType', FoodTypeRoutes)
+
+// Food Type Objec Routes
+app.use('/api/v1/TeaCoffee', TeaCoffee);
+app.use('/api/v1/Appetizers', Appetiser);
+app.use('/api/v1/Dessert', Dessert);
+app.use('/api/v1/MainEntries', MainEntries);
+app.use('/api/v1/JuicesDrinks', JuicesDrinks);
 
 const port = process.env.PORT || 8080;
 

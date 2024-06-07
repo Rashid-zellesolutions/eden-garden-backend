@@ -2,7 +2,7 @@ const {MainEntries} = require('../../../Model/FoodMenue/Packages');
 
 const Add = async(req, res) => {
     const {name, pacFor, cost} = req.body;
-    const mainEntriesImage = req.file['mainEntriesImage'];
+    const mainEntriesImage = req.files['mainEntriesImage'];
     if(!name || !pacFor || !cost || !mainEntriesImage){
         res.status(404).json({success: false, message: "required fields are missing"})
     }

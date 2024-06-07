@@ -14,7 +14,7 @@ const Get = async(req, res) => {
             mainEntriesObj = await MainEntries.find();
         }
         if(mainEntriesObj.length > 0){
-            res.status(200).json({success: true, message: "Data Gate"});
+            res.status(200).json({success: true, message: "Data Gate", mainEntriesObj});
         }else{
             res.status(404).json({success: false, message: "Data not Found"})
         }

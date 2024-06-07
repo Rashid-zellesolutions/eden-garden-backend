@@ -1,6 +1,6 @@
 const {JuiceDrinks} = require('../../../Model/FoodMenue/Packages');
 
-const Delete = async(res, res) => {
+const Delete = async(req, res) => {
     const {id} = req.params;
     try {
         const juiceDrinkObj = await JuiceDrinks.findById(id);

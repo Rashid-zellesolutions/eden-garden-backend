@@ -11,8 +11,8 @@ const Add = async(req, res) => {
             name,
             pacFor,
             cost,
-            dessertImageName: dessertImage[0].originalname,
-            dessertImagePath: dessertImage[0].path
+            dessertsImageName: dessertImage[0].originalname,
+            dessertsImagePath: dessertImage[0].path
         });
         await dessertObj.save();
         res.status(200).json({success: true, message: "Data Added", dessertObj});

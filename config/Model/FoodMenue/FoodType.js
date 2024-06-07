@@ -1,17 +1,20 @@
-const { ObjectId } = require('mongodb');
+
 const mongoose = require('mongoose');
 
-const FoodType = new mongoose.Schema({
-    name: {type: String, required: true},
-    value: {type: String, required: true},
+const FoodTypeSchema = new mongoose.Schema({
+    foodType: {type: String, required: true},
+    value: {type: String},
     packages: [
         {
-            name: {type: String, required: true},
-            appetizers: [ObjectId],
-            mainEntries: [ObjectId],
-            desserts: [ObjectId],
-            teaCoffe: [ObjectId],
-            juicesDrinks: [ObjectId]
+            name: {type: String, },
+            appetizers: { type: Object, },
+            mainEntries: { type: Object, },
+            desserts: { type: Object,  },
+            teaCoffe: { type: Object,},
+            juicesDrinks: { type: Object,  }
         }
     ]
 })
+
+const FoodType = mongoose.model("FoodType", FoodTypeSchema);
+module.exports = FoodType;

@@ -4,6 +4,7 @@ const AppetizersSchema = new mongoose.Schema({
     name: {type: String, required: true},
     pacFor: {type: String, required: true},
     constant: {type: String, default: 'false'},
+    cost: {type: String, required: true},
     appetizersImageName: {type: String, required: true},
     appetizersImagePath: {type: String, required: true},
     createdAt: {type: Date, default: Date.now}
@@ -13,6 +14,7 @@ const MainEntriesSchema = new mongoose.Schema({
     name: {type: String, required: true},
     pacFor: {type: String, required: true},
     constant: {type: String, default: 'false'},
+    cost: {type: String, required: true},
     mainEntriesImageName: {type: String, required: true},
     mainEntriesImagePath: {type: String, required: true},
     createdAt: {type: Date, default: Date.now}
@@ -22,6 +24,7 @@ const DessertsSchema = new mongoose.Schema({
     name: {type: String, required: true},
     pacFor: {type: String, required: true},
     constant: {type: String, default: 'false'},
+    cost: {type: String, required: true},
     dessertsImageName: {type: String, required: true},
     dessertsImagePath: {type: String, required: true},
     createdAt: {type: Date, default: Date.now}
@@ -30,6 +33,7 @@ const DessertsSchema = new mongoose.Schema({
 const teaCoffeSchema = new mongoose.Schema({
     name: {type: String, required: true},
     pacFor: {type: String, required: true},
+    cost: {type: String, required: true},
     constant: {type: String, default: 'false'},
     teaCoffeImageName: {type: String, required: true},
     teaCoffeImagePath: {type: String, required: true},
@@ -40,6 +44,7 @@ const juicesDrinksSchema = new mongoose.Schema({
     name: {type: String, required: true},
     pacFor: {type: String, required: true},
     constant: {type: String, default: 'false'},
+    cost: {type: String, required: true},
     juiceDrinkImageName: {type: String, required: true},
     juiceDrinkImagePath: {type: String, required: true},
     createdAt: {type: Date, default: Date.now}

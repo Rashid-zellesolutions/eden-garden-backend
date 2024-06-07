@@ -1,5 +1,4 @@
 const {Desserts} = require('../../../Model/FoodMenue/Packages');
-const GetSingleData = require('../../Decor/SeatingArrangments/GetSingle');
 
 const GetSingleData = async(req, res) => {
     const {id} = req.params;
@@ -16,4 +15,4 @@ const GetSingleData = async(req, res) => {
     }
 }
 
-module.exports = GetSingleData
+module.exports = GetSingleData;
