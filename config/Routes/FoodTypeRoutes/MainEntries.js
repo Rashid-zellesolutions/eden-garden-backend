@@ -13,8 +13,8 @@ const router = express.Router();
 
 router.post('/add-main-entries', AddMainEntriesMulter, Add);
 router.get('/get-main-entries', Get);
-router.get('/get-single-entry', GetSingleData);
-router.put('/update-entries', AddMainEntriesMulter, Update);
-router.delete('/delete-entry', Delete);
+router.get('/get-single-entry/:id', GetSingleData);
+router.put('/update-entries/:id', AddMainEntriesMulter, Update);
+router.delete('/delete-entry/:id', Delete);
 
 module.exports = router;

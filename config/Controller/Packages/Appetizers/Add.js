@@ -2,7 +2,7 @@ const {Appetizers} = require('../../../Model/FoodMenue/Packages');
 
 const Add = async(req, res) => {
     const {name, pacFor, cost} = req.body
-    const appetizerImage = req.files['appetizersImage'];
+    const appetizerImage = req.files['appetizerImage'];
     if(!name || !pacFor || !cost || !appetizerImage){
         res.status(400).json({success: false, message: "Required Fileds are missing"});
     }
@@ -18,7 +18,7 @@ const Add = async(req, res) => {
         res.status(200).json({success: true, message: "Data Upload", appetizerObj})
     } catch (error) {
         console.error("Error Adding Data", error);
-        res.status(500).json({success: fasle, message: "Internal Server Error"})
+        res.status(500).json({success: false, message: "Internal Server Error"})
     }
 }
 

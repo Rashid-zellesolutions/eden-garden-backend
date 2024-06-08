@@ -16,6 +16,8 @@ const Update = async(req, res) => {
             mainEntriesObj.mainEntriesImageName = mainEntriesImage[0].originalname;
             mainEntriesObj.mainEntriesImagePath = mainEntriesImage[0].path
         }
+        console.log(mainEntriesImage);
+        console.log(mainEntriesObj)
         await mainEntriesObj.save();
         res.status(200).json({success: true, message: "Data Updated", mainEntriesObj});
     } catch (error) {

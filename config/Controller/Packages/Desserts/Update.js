@@ -3,7 +3,7 @@ const {Desserts} = require('../../../Model/FoodMenue/Packages');
 const Update = async(req, res) => {
     const {id} = req.params;
     const {name, pacFor, cost} = req.body;
-    const dessertImage = req.files['desertImage'];
+    const dessertImage = req.files['dessertImage'];
     try {
         const dessertObj = await Desserts.findById(id);
         if(!dessertObj){
@@ -12,10 +12,11 @@ const Update = async(req, res) => {
         if(name) dessertObj.name = name;
         if(pacFor) dessertObj.pacFor = pacFor;
         if(cost) dessertObj.cost = cost;
-        if(desserImage){
+        if(dessertImage){
             dessertObj.dessertsImageName = dessertImage[0].originalname;
             dessertObj.dessertsImagePath = dessertImage[0].path
         };
+        console.log(dessertImage)
         await dessertObj.save();
         res.status(200).json({success: true, message: "data updated", dessertObj});
     } catch (error) {

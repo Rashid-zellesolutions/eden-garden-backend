@@ -7,14 +7,14 @@ const Update = require('../../Controller/Packages/TeaCoffe/Update');
 const Delete = require('../../Controller/Packages/TeaCoffe/Delete');
 
 const {dynamicMulter} = require('../../midlewares/multerMidleware');
-const AddTeaCoffeMulter = dynamicMulter('/FoodType/TeaCoffe', ['teaCoffeImage'], 1, ['image/jpg', 'image/jpeg', 'image/png'], 2*1024*1024);
+const AddTeaCoffeMulter = dynamicMulter('/FoodType/TeaCoffe', ['teaCoffeeImage'], 1, ['image/jpg', 'image/jpeg', 'image/png'], 2*1024*1024);
 
 const router = express.Router();
 
 router.post('/add-tea-coffe', AddTeaCoffeMulter, Add);
 router.get('/get-tea-coffee', Get);
-router.get('/get-single-tea-coffe', GetSingleData);
-router.put('/update-tea-coffe', AddTeaCoffeMulter, Update);
-router.delete('/delete-tea-coffe', Delete);
+router.get('/get-single-tea-coffe/:id', GetSingleData);
+router.put('/update-tea-coffe/:id', AddTeaCoffeMulter, Update);
+router.delete('/delete-tea-coffe/:id', Delete);
 
 module.exports = router;

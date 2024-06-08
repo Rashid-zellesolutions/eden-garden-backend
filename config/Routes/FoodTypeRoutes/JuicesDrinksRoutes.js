@@ -13,8 +13,8 @@ const router = express.Router();
 
 router.post('/add-juices-drinks', AddJuicesDrinksMulter, Add);
 router.get('/get-juices-drinks', Get);
-router.get('/get-single-juice-drink', GetSingleData);
-router.put('/update-juices-drinks', AddJuicesDrinksMulter, Update);
-router.delete('/delete-juices-drinks', Delete);
+router.get('/get-single-juice-drink/:id', GetSingleData);
+router.put('/update-juices-drinks/:id', AddJuicesDrinksMulter, Update);
+router.delete('/delete-juices-drinks/:id', Delete);
 
 module.exports = router;

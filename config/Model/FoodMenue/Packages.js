@@ -50,6 +50,9 @@ const juicesDrinksSchema = new mongoose.Schema({
     createdAt: {type: Date, default: Date.now}
 })
 
+// Midlewares to Update data in Food Type
+AppetizersSchema.post('findOneAndUpdate', async function(doc){})
+
 const Appetizers = mongoose.model("Appetizers", AppetizersSchema)
 const MainEntries = mongoose.model("MainEntries", MainEntriesSchema);
 const Desserts = mongoose.model("Desserts", DessertsSchema);
