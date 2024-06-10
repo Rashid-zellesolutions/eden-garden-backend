@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const diningOptionSchema = new mongoose.Schema({
     name: {type: String, required: true},
+    cost: {type: String},
     diningImageName: {type: String, required: true},
     diningImagePath: {type: String, required: true},
     createdAt: {type: Date, default: Date.now}
@@ -9,6 +10,7 @@ const diningOptionSchema = new mongoose.Schema({
 
 const cutlerySchema = new mongoose.Schema({
     name: {type: String, required: true},
+    cost: {type: String},
     cutleryImageName: {type: String, required: true},
     cutleryImagePath: {type: String, required: true},
     createdAt: {type: Date, default: Date.now}

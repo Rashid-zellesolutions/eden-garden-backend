@@ -16,9 +16,7 @@ const Update = async(req, res) => {
             appetizerObj.appetizersImageName = appetizerImage[0].originalname;
             appetizerObj.appetizersImagePath = appetizerImage[0].path
         }
-        console.log(appetizerImage)
-        console.log(appetizerObj)
-        await appetizerObj.save()
+        await appetizerObj.save();
         res.status(200).json({success: true, message: "Data Updated", appetizerObj});
     } catch (error) {
         console.error("Error Updating Data", error);

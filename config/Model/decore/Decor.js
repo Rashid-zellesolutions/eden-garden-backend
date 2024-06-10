@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 // Seating Arrangment Schema
 const SeatingArrangmentsSchema = new mongoose.Schema({
     name:{type:String, required: true},
+    cost: {type: String},
     seatingArrangmentsImageName: {type: String, required: true},
     seatingArrangmentsImagePath: {type:String, required: true},
     createdAt: {type: Date, default: Date.now}
@@ -11,6 +12,7 @@ const SeatingArrangmentsSchema = new mongoose.Schema({
 // Table Selection Schema
 const TableSelectionSchema = new mongoose.Schema({
     name: {type: String, required: true},
+    cost: {type: String},
     tableImageName: {type: String, required: true},
     tableImagePath: {type: String, required: true},
     createdAt: {type: Date, default: Date.now},
@@ -29,6 +31,7 @@ const ChairSelectionSchema = new mongoose.Schema({
 // Stage Dimentions Schema
 const StageDimentionSchema = new mongoose.Schema({
     name: {type: String, required: true},
+    cost: {type: String},
     createdAt: {type: Date, default: Date.now}
 });
 

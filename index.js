@@ -1,6 +1,13 @@
 
 const dotenv = require("dotenv");
 const express = require("express");
+
+// Midleware to update packages of food type according to Any change
+const appetizerChangeStream = require('./config/midlewares/ChangesStreem');
+const mainEntriesChangeStream = require('./config/midlewares/ChangesStreem');
+const dessertsChangeStream = require('./config/midlewares/ChangesStreem');
+const teaCoffeChangeStream = require('./config/midlewares/ChangesStreem');
+const juicesDrinksChangeStream = require('./config/midlewares/ChangesStreem')
 const cors = require("cors");
 const morgan = require("morgan");
 const { default: mongoose } = require("mongoose");
@@ -51,6 +58,7 @@ const JuicesDrinks = require('./config/Routes/FoodTypeRoutes/JuicesDrinksRoutes'
 
 // config env
 dotenv.config();
+
 
 // express app
 const app = express();

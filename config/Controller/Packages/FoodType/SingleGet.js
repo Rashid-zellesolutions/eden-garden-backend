@@ -7,6 +7,7 @@ const GetSingleData = async(req, res) => {
         if(!foodTypeObj){
             res.status(404).json({success: false, message: "No Data Found"});
         }else{
+            console.log(foodTypeObj.packages[0].appetizers._id)
             res.status(200).json({success: true, message: "Data Found", foodTypeObj});
         }
     } catch (error) {

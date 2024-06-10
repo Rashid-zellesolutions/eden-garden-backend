@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Appetizers Schema
 const AppetizersSchema = new mongoose.Schema({
     name: {type: String, required: true},
     pacFor: {type: String, required: true},
@@ -10,6 +11,7 @@ const AppetizersSchema = new mongoose.Schema({
     createdAt: {type: Date, default: Date.now}
 });
 
+// Main Entries Schema
 const MainEntriesSchema = new mongoose.Schema({
     name: {type: String, required: true},
     pacFor: {type: String, required: true},
@@ -20,6 +22,7 @@ const MainEntriesSchema = new mongoose.Schema({
     createdAt: {type: Date, default: Date.now}
 })
 
+// Desserts Schema
 const DessertsSchema = new mongoose.Schema({
     name: {type: String, required: true},
     pacFor: {type: String, required: true},
@@ -30,6 +33,7 @@ const DessertsSchema = new mongoose.Schema({
     createdAt: {type: Date, default: Date.now}
 })
 
+// TeaCoffe Schema
 const teaCoffeSchema = new mongoose.Schema({
     name: {type: String, required: true},
     pacFor: {type: String, required: true},
@@ -40,6 +44,7 @@ const teaCoffeSchema = new mongoose.Schema({
     createdAt: {type: Date, default: Date.now}
 })
 
+// Juices And Drinks Schema
 const juicesDrinksSchema = new mongoose.Schema({
     name: {type: String, required: true},
     pacFor: {type: String, required: true},
@@ -49,9 +54,6 @@ const juicesDrinksSchema = new mongoose.Schema({
     juiceDrinkImagePath: {type: String, required: true},
     createdAt: {type: Date, default: Date.now}
 })
-
-// Midlewares to Update data in Food Type
-AppetizersSchema.post('findOneAndUpdate', async function(doc){})
 
 const Appetizers = mongoose.model("Appetizers", AppetizersSchema)
 const MainEntries = mongoose.model("MainEntries", MainEntriesSchema);

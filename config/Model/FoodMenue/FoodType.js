@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose');
 
 const FoodTypeSchema = new mongoose.Schema({
@@ -8,7 +7,7 @@ const FoodTypeSchema = new mongoose.Schema({
         {
             name: {type: String, },
             appetizers: { type: Object, ref: 'Appetizers' },
-            mainEntries: { type: Object, ref: 'MainEntries' },
+            mainEntries: { type: Object, ref: 'mainEntries' },
             desserts: { type: Object, ref: 'Desserts' },
             teaCoffe: { type: Object, ref: 'TeaCoffe'},
             juicesDrinks: { type: Object, ref: 'JuiceDrinks' }
