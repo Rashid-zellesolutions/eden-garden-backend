@@ -7,7 +7,7 @@ const Delete = async(req, res) => {
         if(!foodTypeObj){
             res.status(404).json({success: false, message: "Data not found"});
         }else{
-            foodTypeObj = await FoodType.findByIdAndDelete(id);
+            await FoodType.findByIdAndDelete(id);
             res.status(200).json({success: true, message: "Data Deleted", foodTypeObj})
         }
     } catch (error) {

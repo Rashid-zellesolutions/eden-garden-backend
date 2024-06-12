@@ -1,13 +1,13 @@
 const {Sound} = require('../../../Model/Others/Others');
 
 const Get = async(req, res) => {
-    const {name, cost, uId} = req.query;
+    const {name, cost} = req.query;
     try {
         let soundObj;
-        let query;
+        let query = {};
         if(name) query.name = name;
         if(cost) query.cost = cost;
-        if(uId) query.uId = uId;
+        // if(uId) query.uId = uId;
 
         if(Object.keys(query).length > 0){
             soundObj = await Sound.find(query);

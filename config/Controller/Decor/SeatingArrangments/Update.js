@@ -2,7 +2,7 @@ const {SeatingArangments} = require('../../../Model/decore/Decor');
 
 const Update = async(req, res) => {
     const {id} = req.params;
-    const {name} = req.body;
+    const {name, cost} = req.body;
     const seatingImage = req.files['seatingImage'];
     try {
         const seatingObj = await SeatingArangments.findById(id);
@@ -10,6 +10,7 @@ const Update = async(req, res) => {
             res.status(400).json({status: 200, message: "No Data Found"});
         }
         if(name) seatingObj.name = name;
+        if(cost) seatingObj.cost = cost;
         if(seatingImage){
             seatingObj.seatingArrangmentsImageName = seatingImage[0].originalname;
             seatingObj.seatingArrangmentsImagePath = seatingImage[0].path;

@@ -1,13 +1,13 @@
 const {DiningOption} = require('../../../Model/Others/Others');
 
 const Get = async(req, res) => {
-    const {name} = req.query;
+    const {name, cost} = req.query;
     try {
         let diningObj;
         let query = {};
         if(name) query.name = {$regex: `^${name}`, Option: 'i'};
         if(cost) query.cost = cost;
-        if(uId) query.uId = uId;
+        // if(uId) query.uId = uId;
         if(Object.keys(query).length > 0){
             diningObj = await DiningOption.find(query);
         }else{

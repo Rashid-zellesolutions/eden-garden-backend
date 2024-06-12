@@ -1,14 +1,15 @@
 const {Cutlery} = require('../../../Model/Others/Others');
 
 const Add = async(req, res) => {
-    const {name} = req.body;
+    const {name, cost} = req.body;
     const cutleryImage = req.files['cutleryImage'];
-    if(!name || !cutleryImage){
+    if(!name || !cost || !cutleryImage){
         res.status(400).json({status: 400, message: "Required fields are missing"});
     }
     try {
         const cutleryObj = Cutlery({
             name,
+            cost,
             cutleryImageName : cutleryImage[0].originalname,
             cutleryImagePath : cutleryImage[0].path
         });

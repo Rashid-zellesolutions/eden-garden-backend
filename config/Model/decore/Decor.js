@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // Seating Arrangment Schema
 const SeatingArrangmentsSchema = new mongoose.Schema({
     name:{type:String, required: true},
-    cost: {type: String},
+    cost: {type: String, required: true},
     seatingArrangmentsImageName: {type: String, required: true},
     seatingArrangmentsImagePath: {type:String, required: true},
     createdAt: {type: Date, default: Date.now}

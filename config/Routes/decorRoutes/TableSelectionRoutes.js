@@ -15,6 +15,6 @@ router.post('/add-table-seletc', AddTableSelectionMulter, Add);
 router.get('/get-table-select', Get);
 router.get('/get-single-table-select/:id', GetSingleData);
 router.put('/update-table-select/:id', AddTableSelectionMulter, Update);
-router.delete('/delete-table-select', Delete);
+router.delete('/delete-table-select/:id', Delete);
 
 module.exports = router;

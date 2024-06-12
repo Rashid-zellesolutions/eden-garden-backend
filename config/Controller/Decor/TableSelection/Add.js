@@ -1,14 +1,15 @@
 const {TableSelection} = require('../../../Model/decore/Decor');
 
 const Add = async(req, res) => {
-    const {name} = req.body;
+    const {name, cost} = req.body;
     const tableImage = req.files['tableImage'];
-    if(!name || !tableImage){
+    if(!name || !cost || !tableImage){
         res.status(400).json({status: 400, message: "required fields are missing"});
     }
     try {
         const tableObj = TableSelection({
             name,
+            cost,
             tableImageName: tableImage[0].originalname,
             tableImagePath: tableImage[0].path
         })

@@ -1,13 +1,14 @@
 const {StageDimention} = require('../../../Model/decore/Decor');
 
 const Add = async(req, res) => {
-    const { name } = req.body;
-    if(!name){
+    const { name, cost } = req.body;
+    if(!name || !cost){
         return res.status(400).json({status: 400, message: "Required Field is missing"});
     }
     try {
         const dimention = new StageDimention({
-            name
+            name,
+            cost
         });
 
         await dimention.save();
