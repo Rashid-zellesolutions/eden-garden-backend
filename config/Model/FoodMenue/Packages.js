@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 // Appetizers Schema
 const AppetizersSchema = new mongoose.Schema({
+    // _id: { type: String, required: true },
     name: {type: String, required: true},
     pacFor: {type: String, required: true},
     constant: {type: String, default: 'false'},

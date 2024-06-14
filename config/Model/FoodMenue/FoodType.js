@@ -5,14 +5,15 @@ const FoodTypeSchema = new mongoose.Schema({
     value: {type: String},
     packages: [
         {
-            name: {type: String, },
-            appetizers: { type: Object, ref: 'Appetizers' },
-            mainEntries: { type: Object, ref: 'mainEntries' },
-            desserts: { type: Object, ref: 'Desserts' },
-            teaCoffe: { type: Object, ref: 'TeaCoffe'},
-            juicesDrinks: { type: Object, ref: 'JuiceDrinks' }
+            name: String ,
+            appetizers: [{ type: Object, ref: 'Appetizers' }],
+            mainEntries: [{ type: Object, ref: 'mainEntries' }],
+            desserts: [{ type: Object, ref: 'Desserts' }],
+            teaCoffe: [{ type: Object, ref: 'TeaCoffe'}],
+            juicesDrinks: [{ type: Object, ref: 'JuiceDrinks' }]
         }
     ]
+    
 })
 
 const FoodType = mongoose.model("FoodType", FoodTypeSchema);
