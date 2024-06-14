@@ -9,7 +9,6 @@ const Add = async(req, res) => {
     try {
         const customId = generateCustomId();
         const appetizerObj = Appetizers({
-            _id: customId,
             name,
             pacFor,
             cost,
@@ -23,8 +22,8 @@ const Add = async(req, res) => {
         savedAppetizer._id = savedAppetizer._id.toString();
 
         // await appetizerObj.save();
-        savedAppetizer.createdAt = savedAppetizer.createdAt.toISOString();
-        res.status(200).json({success: true, message: "Data Upload", appetizerObj:savedAppetizer})
+        // savedAppetizer.createdAt = savedAppetizer.createdAt.toISOString();
+        res.status(200).json({success: true, message: "Data Upload", appetizerObj})
     } catch (error) {
         console.error("Error Adding Data", error);
         res.status(500).json({success: false, message: "Internal Server Error"})

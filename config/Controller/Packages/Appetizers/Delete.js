@@ -2,6 +2,7 @@ const {Appetizers} = require('../../../Model/FoodMenue/Packages');
 
 const Delete = async(req, res) => {
     const {id} = req.params;
+    console.log("appetizer id", id)
     try {
         const appetizerObj = await Appetizers.findById(id);
         if(!appetizerObj){

@@ -6,6 +6,7 @@ const FoodTypeSchema = new mongoose.Schema({
     packages: [
         {
             name: String ,
+            descriptions: String,
             appetizers: [{ type: Object, ref: 'Appetizers' }],
             mainEntries: [{ type: Object, ref: 'mainEntries' }],
             desserts: [{ type: Object, ref: 'Desserts' }],

@@ -2,7 +2,7 @@ const { ObjectId } = require('mongodb');
 const FoodType = require('../../../Model/FoodMenue/FoodType');
 
 const Add = async(req, res) => {
-    const {foodType, packages} = req.body
+    const {foodType, packages} = req.body;
     try {
         console.log('Received request body:', req.body);
         // const convertedPackages = packages.map(pkg => ({
