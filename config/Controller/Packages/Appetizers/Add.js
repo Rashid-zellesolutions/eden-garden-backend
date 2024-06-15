@@ -16,10 +16,10 @@ const Add = async(req, res) => {
             appetizersImagePath: appetizerImage[0].path
         });
 
-        const savedAppetizer = await appetizerObj.save();
+        await appetizerObj.save();
         console.log(customId)
         // Convert _id to string format
-        savedAppetizer._id = savedAppetizer._id.toString();
+        // savedAppetizer._id = savedAppetizer._id.toString();
 
         // await appetizerObj.save();
         // savedAppetizer.createdAt = savedAppetizer.createdAt.toISOString();
